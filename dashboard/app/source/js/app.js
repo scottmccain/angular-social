@@ -47,6 +47,7 @@ app.config(function ($stateProvider, $urlRouterProvider, viewUrl) {
         url: '/login',
         templateUrl: viewUrl('login/index.html'),
         controller: 'LoginController',
+        controllerAs: 'vm',
         data: {
             allowAnonymous: true
         }
