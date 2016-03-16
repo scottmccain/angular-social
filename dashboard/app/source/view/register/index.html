@@ -28,65 +28,62 @@
     <!-- Top content -->
     <div class="container">
     	
-        <div class="jumbotron">
-            <h2>Promote your <strong>Product</strong></h2>
-            <h2>Using Your Social Media Presence with <strong>NoFear</strong></h2>
-        	<p>
-            	We have been working very hard to create the new version of our product. 
-            	It comes with a lot of new features, easy to follow videos and images. Check it out now!
-        	</p>
-            <button type="button" ng-click="learnMore()" class="btn btn-primary btn-lg">Learn More</button>
+        <div class="col-sm-8 form-box">
+        	<div class="form-top">
+        		<div class="form-top-left">
+        			<h3>Sign up now</h3>
+            		<p>Fill in the form below to get instant access:</p>
+        		</div>
+        		<div class="form-top-right">
+        			<i class="fa fa-pencil"></i>
+        		</div>
+            </div>
+            <div class="form-bottom">
+                <form name="registration-form" role="form" action="" method="post" class="registration-form">
+                	<div class="form-group">
+                		<label class="sr-only" for="form-first-name">First name</label>
+                    	<input type="text" ng-model="firstname" required name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-last-name">Last name</label>
+                    	<input type="text" ng-model="lastname" required name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-email">Email</label>
+                    	<input type="text" ng-model="username" name="form-email" required placeholder="Email..." class="form-email form-control" id="form-email">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-password">Email</label>
+                    	<input type="password" ng-model="password" name="form-password" required placeholder="Password..." class="form-password form-control" id="form-password">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-passwordcheck">Email</label>
+                    	<input type="password" ng-model="passwordcheck" name="form-passwordcheck" required placeholder="Verify Password..." class="form-passwordcheck form-control" id="form-passwordcheck">
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-about-yourself">About yourself</label>
+                    	<textarea name="form-about-yourself" placeholder="About yourself..." class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button type="button" ng-click="register()" class="btn btn-primary">Sign me up!</button>
+                            <a ui-sref="feature" class="btn btn-success">More Info</a>
+                        </div>
+					    <div class="col-lg-8">
+                        	<a href="#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
+                        	<a href="#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
+                    	</div>
+                    </div>
+                </form>
+            </div>
         </div>
+
         
     </div>
  
 </div>
 
 <!--
-                    <div class="col-sm-5 form-box">
-                    	<div class="form-top">
-                    		<div class="form-top-left">
-                    			<h3>Sign up now</h3>
-                        		<p>Fill in the form below to get instant access:</p>
-                    		</div>
-                    		<div class="form-top-right">
-                    			<i class="fa fa-pencil"></i>
-                    		</div>
-                        </div>
-                        <div class="form-bottom">
-		                    <form name="registration-form" role="form" action="" method="post" class="registration-form">
-		                    	<div class="form-group">
-		                    		<label class="sr-only" for="form-first-name">First name</label>
-		                        	<input type="text" ng-model="firstname" required name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-		                        </div>
-		                        <div class="form-group">
-		                        	<label class="sr-only" for="form-last-name">Last name</label>
-		                        	<input type="text" ng-model="lastname" required name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-		                        </div>
-		                        <div class="form-group">
-		                        	<label class="sr-only" for="form-email">Email</label>
-		                        	<input type="text" ng-model="username" name="form-email" required placeholder="Email..." class="form-email form-control" id="form-email">
-		                        </div>
-		                        <div class="form-group">
-		                        	<label class="sr-only" for="form-password">Email</label>
-		                        	<input type="password" ng-model="password" name="form-password" required placeholder="Password..." class="form-password form-control" id="form-password">
-		                        </div>
-		                        <div class="form-group">
-		                        	<label class="sr-only" for="form-passwordcheck">Email</label>
-		                        	<input type="password" ng-model="passwordcheck" name="form-passwordcheck" required placeholder="Verify Password..." class="form-passwordcheck form-control" id="form-passwordcheck">
-		                        </div>
-		                        <div class="form-group">
-		                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-		                        	<textarea name="form-about-yourself" placeholder="About yourself..." class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-		                        </div>
-		                        <button ng-click="register()" class="btn">Sign me up!</button>
-								<div class="form-links">
-		                        	<a href="#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
-		                        	<a href="#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
-			                    </div>		                        
-		                    </form>
-	                    </div>
-                    </div>
                 </div>
             </div>
         </div>

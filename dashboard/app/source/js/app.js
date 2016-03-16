@@ -62,7 +62,21 @@ app.config(function ($stateProvider, $urlRouterProvider, viewUrl) {
         }
     });
     
-            // Catch-all state for invalid URLs
+    $stateProvider.state('protected', {
+        url: '/protected',
+        templateUrl: viewUrl('register/index.html'),
+        controller: 'RegisterController',
+    });    
+    
+    $stateProvider.state('feature', {
+        url: '/features',
+        templateUrl: viewUrl('feature/index.html'),
+        data: {
+            allowAnonymous: true
+        }
+    });
+    
+    // Catch-all state for invalid URLs
     // Note: This state must be defined last
     $stateProvider.state('otherwise', {
         url: '*path',
@@ -79,8 +93,5 @@ require('./controller');
 require('./views');
 
 // get required components
-//require('./service'); 
-//require('./run');  
 //require('./factory');
-//require('./config');
 require('./directive');
