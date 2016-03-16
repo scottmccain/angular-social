@@ -14,6 +14,35 @@ app.constant('viewUrl', function(relativePath) {
     return '/view/' + relativePath ;
 });
     
+    
+app.factory('httpRequestInterceptor', function($log, sessionService) {
+    return {
+        request: function($config) {
+            var session = sessionService.getSession();
+            if (session) {
+                $config.headers.Authorization = 'Basic ' + session.token;
+            }
+            return $config;
+        }
+    };
+});
+
+app.factory('httpResponseInterceptor', function($rootScope, $q, $log, sessionService) {
+    function isInvalidSessionError(response) {
+        return response.status == 401;
+    }
+
+    return function (promise) {
+        return promise.then(null, function(response) {
+            if (isInvalidSessionError(response)) {
+                $rootScope.$broadcast('session-expired');
+            }
+
+            return $q.reject(response);
+        });
+    };
+});
+
 app.run(function ($rootScope, $state, $log, $timeout, SessionService) {
     $rootScope.$on('$stateChangeStart', function (event, toState) {
         // if the user is not authenticated and the state does not
@@ -39,6 +68,8 @@ app.run(function ($rootScope, $state, $log, $timeout, SessionService) {
     });
 });
 
+
+
 app.config(function ($stateProvider, $urlRouterProvider, viewUrl) {
     // Make sure to end urls with a trailing '/'
     // See https://github.com/angular-ui/ui-router/issues/50
@@ -61,6 +92,13 @@ app.config(function ($stateProvider, $urlRouterProvider, viewUrl) {
             allowAnonymous: true
         }
     });
+    
+    $stateProvider.state('session-expired', {
+        templateUrl: viewUrl('session-expired.html'),
+        data: {
+            allowAnonymous: true
+        }
+    });    
     
     $stateProvider.state('protected', {
         url: '/protected',
