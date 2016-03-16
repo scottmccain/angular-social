@@ -2,3 +2,4 @@ mongod
 npm-debug.log
 node_modules
 dashboard/build
+dashboard/app/source/js/templates

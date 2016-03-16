@@ -70,7 +70,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('copy-fonts', function() {
-   return gulp.src(['./node_modules/bootstrap/dist/fonts/**/*.*'])
+   return gulp.src(['./node_modules/bootstrap/dist/fonts/**/*.*','./node_modules/font-awesome/fonts/**/*.*'])
    .pipe(gulp.dest('build/fonts'));
 });
 
