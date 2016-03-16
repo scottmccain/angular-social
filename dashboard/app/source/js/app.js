@@ -76,7 +76,7 @@ app.config(function ($stateProvider, $urlRouterProvider, viewUrl) {
 
 require('./service');
 require('./controller');
-require('../../../build/templates');
+require('./views');
 
 // get required components
 //require('./service'); 
