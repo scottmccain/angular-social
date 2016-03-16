@@ -87,7 +87,7 @@ gulp.task('build-templates', function() {
         declareModule: false,
 		prefix: "/view/"
 	}))
-	.pipe(gulp.dest("./app/source/js/template"));   
+	.pipe(gulp.dest("build/templates"));   
 
 });
 

@@ -1,3 +1,4 @@
 mongod
 npm-debug.log
 node_modules
+dashboard/build
